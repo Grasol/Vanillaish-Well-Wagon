@@ -7,7 +7,9 @@ Simple NewGRF to intermodal containers transport
 Well Wagon can transport all types of cargo except passengers and mail.
 
 Default capacity is 60, but
+
 for Steel is 40
+
 for Oil is 80
 
 <img src="example.png">
@@ -24,7 +26,9 @@ for Oil is 80
 
 #### CHANGELOG
 #### 1.1
+- change: cost factor increased 3.5 times
 - fix: some strings
+- fix: autorefit was not allow
 
 #### 1.0
 
