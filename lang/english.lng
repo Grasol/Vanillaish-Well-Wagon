@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
 STR_GRF_NAME        :Vanillaish Well Wagon
-STR_GRF_DESCRIPTION :{}{GOLD}Vanillaish Well Wagon 1.0 {}{SILVER}Intermodal double stack containers transport{}{}{GOLD}Parameters:{}{BLACK}not implemented yet{}{}{DKGREEN}Vanillaish Well Wagon {COPYRIGHT} 2025 by Grasol is licensed under CC{NBSP}BY-NC-SA 4.0 {}{}{BLACK}
+STR_GRF_DESCRIPTION :{}{GOLD}Vanillaish Well Wagon 1.1 {}{SILVER}Simple NewGRF to intermodal containers transport {}{YELLOW}Main Feature: {SILVER}Double Stack Well Wagon{}Well Wagon can transport all types of cargo except passengers and mail{}Default capacity is 60, but{}for Steel is 40 {}for Oil is 80{}{}{GOLD}Parameters:{}{BLACK}not implemented yet{}{}{DKGREEN}Vanillaish Well Wagon {COPYRIGHT} 2025 by Grasol is licensed under CC{NBSP}BY-NC-SA 4.0 {}{}{BLACK}
 STR_GRF_URL         :https://github.com/Grasol
 
 STR_WELLWAGON_NAME  :Well Wagon

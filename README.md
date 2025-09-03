@@ -23,6 +23,9 @@ for Oil is 80
 - Flat wagon to single container
 
 #### CHANGELOG
+#### 1.1
+- fix: some strings
+
 #### 1.0
 
 - add: 3 Section Well Wagon
