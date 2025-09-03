@@ -1,0 +1,9 @@
+##grflangid 0x01
+
+STR_GRF_NAME        :Vanillaish Well Wagon
+STR_GRF_DESCRIPTION :{}{GOLD}Vanillaish Well Wagon 1.0 {}{SILVER}Intermodal double stack containers transport{}{}{GOLD}Parameters:{}{BLACK}not implemented yet{}{}{DKGREEN}Vanillaish Well Wagon {COPYRIGHT} 2025 by Grasol is licensed under CC{NBSP}BY-NC-SA 4.0 {}{}{BLACK}
+STR_GRF_URL         :https://github.com/Grasol
+
+STR_WELLWAGON_NAME  :Well Wagon
+
+
