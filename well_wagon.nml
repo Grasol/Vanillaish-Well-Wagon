@@ -77,7 +77,7 @@ switch (FEAT_TRAINS, SELF, sw_wellwagon_cargo_capacity, cargo_type_in_veh) {
     return  60;
 }
 
-random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_1, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)) {
+random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_1, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
     5: return COLOUR_DARK_BLUE;
     2: return COLOUR_PALE_GREEN;
     3: return COLOUR_YELLOW;
@@ -92,7 +92,7 @@ random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_1, bitmask(TRIGGER_
     16: return COLOUR_WHITE;
 }
 
-random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_2, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)) {
+random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_2, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
     independent: sw_wellwagon_random_colour_1;
     5: return COLOUR_DARK_BLUE;
     2: return COLOUR_PALE_GREEN;
@@ -165,6 +165,7 @@ item(FEAT_TRAINS, item_rail_wellwagon) {
     graphics {
         cargo_capacity:                 sw_wellwagon_cargo_capacity;
         colour_mapping:                 palette_2cc(sw_wellwagon_random_colour_1(), sw_wellwagon_random_colour_2());
+        random_trigger:                 palette_2cc(sw_wellwagon_random_colour_1(), sw_wellwagon_random_colour_2());
         articulated_part:               sw_wellwagon_articulated_part;
         default:                        sw_wellwagon_setgroup_pos;
         purchase:                       set_wellwagon_purchase;
