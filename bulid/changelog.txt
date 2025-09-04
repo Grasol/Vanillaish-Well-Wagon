@@ -1,9 +1,0 @@
-#### CHANGELOG
-
-#### 1.1
-
-- fix: some strings
-
-#### 1.0
-
-- add: Well Wagon
