@@ -269,7 +269,7 @@ item(FEAT_TRAINS, item_rail_wellwagon) {
         cost_factor:                    0;
         running_cost_factor:            0;
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          111 km/h;
+        speed:                          141 km/h;
         misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                     0;
         track_type:                     RAIL;
