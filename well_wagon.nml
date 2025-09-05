@@ -6,6 +6,62 @@ grf {
     version:                        11;
     min_compatible_version:         10;
     url:                            string(STR_GRF_URL);
+
+    param 0 {
+        param_realistic_containers_colours {
+            type:           bool;
+            bit:            0;
+            name:           string(STR_PARAM_RCC_NAME);
+            desc:           string(STR_PARAM_RCC_DESC);
+            def_value:      0;
+        }
+    }
+
+    param 1 {
+        param_running_cost_mult {
+            type:           int;
+            name:           string(STR_PARAM_RCM_NAME);
+            desc:           string(STR_PARAM_RCM_DESC);
+            min_value:      0;
+            max_value:      9;
+            def_value:      5;
+            names: {
+                0:          string(STR_PARAM_COST_NONE);
+                1:          string(STR_PARAM_COST_BY16);
+                2:          string(STR_PARAM_COST_BY8);
+                3:          string(STR_PARAM_COST_BY4);
+                4:          string(STR_PARAM_COST_BY2);
+                5:          string(STR_PARAM_COST_DEFAULT);
+                6:          string(STR_PARAM_COST_TIMES2);
+                7:          string(STR_PARAM_COST_TIMES4);
+                8:          string(STR_PARAM_COST_TIMES8);
+                9:          string(STR_PARAM_COST_TIMES16);
+            };
+        }
+    }
+
+    param 2 {
+        param_purchase_cost_mult {
+            type:           int;
+            name:           string(STR_PARAM_PCM_NAME);
+            desc:           string(STR_PARAM_PCM_DESC);
+            min_value:      0;
+            max_value:      9;
+            def_value:      5;
+            names: {
+                0:          string(STR_PARAM_COST_NONE);
+                1:          string(STR_PARAM_COST_BY16);
+                2:          string(STR_PARAM_COST_BY8);
+                3:          string(STR_PARAM_COST_BY4);
+                4:          string(STR_PARAM_COST_BY2);
+                5:          string(STR_PARAM_COST_DEFAULT);
+                6:          string(STR_PARAM_COST_TIMES2);
+                7:          string(STR_PARAM_COST_TIMES4);
+                8:          string(STR_PARAM_COST_TIMES8);
+                9:          string(STR_PARAM_COST_TIMES16);
+            };
+        }
+    }
 }
 
 railtypetable {
@@ -71,12 +127,6 @@ spritegroup setgroup_wellwagon_container_last {
 /*             Switches              */
 /* - - - - - - - - - - - - - - - - - */
 
-switch (FEAT_TRAINS, SELF, sw_wellwagon_cargo_capacity, cargo_type_in_veh) {
-    STEL:   return 40;
-    OIL_:   return 80;
-    return  60;
-}
-
 random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_1, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
     5: return COLOUR_DARK_BLUE;
     2: return COLOUR_PALE_GREEN;
@@ -89,7 +139,8 @@ random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_1, bitmask(TRIGGER_
     6: return COLOUR_CREAM;
     5: return COLOUR_MAUVE;
     3: return COLOUR_ORANGE;
-    16: return COLOUR_WHITE;
+    8: return COLOUR_GREY;
+    8: return COLOUR_WHITE;
 }
 
 random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_2, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
@@ -105,7 +156,63 @@ random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_2, bitmask(TRIGGER_
     6: return COLOUR_CREAM;
     5: return COLOUR_MAUVE;
     3: return COLOUR_ORANGE;
-    16: return COLOUR_WHITE;
+    8: return COLOUR_GREY;
+    8: return COLOUR_WHITE;
+}
+
+random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_3, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
+    1: return COLOUR_DARK_BLUE;
+    1: return COLOUR_PALE_GREEN;
+    1: return COLOUR_PINK;
+    1: return COLOUR_YELLOW;
+    1: return COLOUR_RED;
+    1: return COLOUR_LIGHT_BLUE;
+    1: return COLOUR_GREEN;
+    1: return COLOUR_DARK_GREEN;
+    1: return COLOUR_BLUE;
+    1: return COLOUR_CREAM;
+    1: return COLOUR_MAUVE;
+    1: return COLOUR_PURPLE;
+    1: return COLOUR_ORANGE;
+    1: return COLOUR_BROWN;
+    1: return COLOUR_GREY;
+    1: return COLOUR_WHITE;
+}
+
+random_switch (FEAT_TRAINS, SELF, sw_wellwagon_random_colour_4, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
+    independent: sw_wellwagon_random_colour_3;
+    1: return COLOUR_DARK_BLUE;
+    1: return COLOUR_PALE_GREEN;
+    1: return COLOUR_PINK;
+    1: return COLOUR_YELLOW;
+    1: return COLOUR_RED;
+    1: return COLOUR_LIGHT_BLUE;
+    1: return COLOUR_GREEN;
+    1: return COLOUR_DARK_GREEN;
+    1: return COLOUR_BLUE;
+    1: return COLOUR_CREAM;
+    1: return COLOUR_MAUVE;
+    1: return COLOUR_PURPLE;
+    1: return COLOUR_ORANGE;
+    1: return COLOUR_BROWN;
+    1: return COLOUR_GREY;
+    1: return COLOUR_WHITE;
+}
+
+switch (FEAT_TRAINS, SELF, sw_wellwagon_random_param_13, param[0]) {
+    0: sw_wellwagon_random_colour_3;
+    sw_wellwagon_random_colour_1;
+}
+
+switch (FEAT_TRAINS, SELF, sw_wellwagon_random_param_24, param[0]) {
+    0: sw_wellwagon_random_colour_4;
+    sw_wellwagon_random_colour_2;
+}
+
+switch (FEAT_TRAINS, SELF, sw_wellwagon_cargo_capacity, cargo_type_in_veh) {
+    STEL:   return 40;
+    OIL_:   return 80;
+    return  60;
 }
 
 switch (FEAT_TRAINS, SELF, sw_wellwagon_articulated_part, extra_callback_info1) {
@@ -164,8 +271,8 @@ item(FEAT_TRAINS, item_rail_wellwagon) {
 
     graphics {
         cargo_capacity:                 sw_wellwagon_cargo_capacity;
-        colour_mapping:                 palette_2cc(sw_wellwagon_random_colour_1(), sw_wellwagon_random_colour_2());
-        random_trigger:                 palette_2cc(sw_wellwagon_random_colour_1(), sw_wellwagon_random_colour_2());
+        colour_mapping:                 palette_2cc(sw_wellwagon_random_param_13(), sw_wellwagon_random_param_24());
+        random_trigger:                 palette_2cc(sw_wellwagon_random_param_13(), sw_wellwagon_random_param_24());
         articulated_part:               sw_wellwagon_articulated_part;
         default:                        sw_wellwagon_setgroup_pos;
         purchase:                       set_wellwagon_purchase;
