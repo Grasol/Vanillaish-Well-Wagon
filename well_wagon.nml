@@ -238,6 +238,18 @@ switch (FEAT_TRAINS, SELF, sw_wellwagon_setgroup_pos, position_in_articulated_ve
     sw_setgroup_wellwagon_first;
 }
 
+switch (FEAT_TRAINS, SELF, sw_purchase_cost_factor, param[2]) {
+    0: return 0;
+    1..4: return 650 >> (5 - param[2]);
+    return 650 << (param[2] - 5);
+}
+
+switch (FEAT_TRAINS, SELF, sw_running_cost_factor, param[1]) {
+    0: return 0;
+    1..4: return 16 >> (5 - param[1]);
+    return 16 << (param[1] - 5);    
+}
+
 
 /* - - - - - - - - - - - - - - - - - */
 /*            Well Wagon             */
@@ -263,7 +275,7 @@ item(FEAT_TRAINS, item_rail_wellwagon) {
         track_type:                     RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          0;
-        running_cost_base:              RUNNING_COST_NONE;
+        running_cost_base:              return (param[1] == 0) ? RUNNING_COST_NONE : RUNNING_COST_STEAM;
         cargo_capacity:                 60;
         weight:                         60;
         bitmask_vehicle_info:           0;
@@ -276,7 +288,8 @@ item(FEAT_TRAINS, item_rail_wellwagon) {
         articulated_part:               sw_wellwagon_articulated_part;
         default:                        sw_wellwagon_setgroup_pos;
         purchase:                       set_wellwagon_purchase;
-        cost_factor:                    650;
+        cost_factor:                    sw_purchase_cost_factor;
+        running_cost_factor:            sw_running_cost_factor;
     }
 }
 
