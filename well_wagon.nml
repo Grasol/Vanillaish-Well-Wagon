@@ -275,7 +275,7 @@ item(FEAT_TRAINS, item_rail_wellwagon) {
         track_type:                     RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          0;
-        running_cost_base:              return (param[1] == 0) ? RUNNING_COST_NONE : RUNNING_COST_STEAM;
+        running_cost_base:              (param[1] == 0) ? RUNNING_COST_NONE : RUNNING_COST_STEAM;
         cargo_capacity:                 60;
         weight:                         60;
         bitmask_vehicle_info:           0;
