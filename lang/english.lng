@@ -4,19 +4,19 @@ STR_GRF_NAME                    :Vanillaish Well Wagon
 STR_GRF_DESCRIPTION             :{}{GOLD}Vanillaish Well Wagon 1.1 {}{SILVER}Simple NewGRF to intermodal containers transport {}{}{YELLOW}Main Feature: {SILVER}Double Stack Well Wagon{}{}Well Wagon can transport all types of cargo except passengers and mail{}Default capacity is 60, but{}for Steel is 40 {}for Oil is 80{}{}{GOLD}Requires:{}{SILVER}OpenTTD >= 1.4.0{}{YELLOW}Recommended OpenTTD >= 14.0 / JGRPP > 0.66.0{}{}{GOLD}Parameters:{}{BLACK}More realistic containers colours: {SILVER}Randomizer will favor blue, red and white{}{BLACK}Running / Purchase cost factor: {SILVER}Free - 1/16 - 1 - x16{}{}{DKGREEN}Vanillaish Well Wagon {COPYRIGHT} 2025 by Grasol is licensed under CC{NBSP}BY-NC-SA 4.0 {}{}{BLACK}
 STR_GRF_URL                         :https://github.com/Grasol/Vanillaish-Well-Wagon
 
+STR_WELLWAGON_NAME_R            :Well Wagon (Random)
 STR_WELLWAGON_NAME              :Well Wagon
-STR_WELLWAGON_NAME_CC          :Well Wagon (Company Colours)
 
 STR_PARAM_RCC_NAME              :More realistic containers colours 
-STR_PARAM_RCC_DESC              :{RED}This option requires:{}{YELLOW}OpenTTD >= v14.0{}JGRPP > v0.66.0{}{}{BLACK}Containers colours will be more realistic. Randomizer will favor blue, red and white
+STR_PARAM_RCC_DESC              :{RED}This option requires:{}{YELLOW}OpenTTD >= v14.0{}JGRPP >= v0.66.1{}{}{BLACK}Containers colours will be more realistic. Randomizer will favor blue, red and white
 STR_PARAM_RCM_NAME              :Running cost factor
 STR_PARAM_RCM_DESC              :Allows to adjust the running cost
 STR_PARAM_PCM_NAME              :Purchase cost factor
 STR_PARAM_PCM_DESC              :Allows to adjust the purchase cost
-STR_PARAM_CCWG_NAME             :Company Colour Wagon with white/gray containers
-STR_PARAM_CCWG_DESC             :Company Colour Wagon has additional white/gray containers
-STR_PARAM_ECC_NAME              :Company Colour Wagon with extra containers
-STR_PARAM_ECC_DESC             :Company Colour Wagon has additional extra containers close to company colours
+STR_PARAM_CCWG_NAME             :White/Gray raisins
+STR_PARAM_CCWG_DESC             :Well Wagon has additional white/gray containers
+STR_PARAM_ECC_NAME              :Extra raisins
+STR_PARAM_ECC_DESC              :Well Wagon has additional extra containers close to company colours
 
 STR_PARAM_COST_NONE             :Free
 STR_PARAM_COST_BY16             :1/16

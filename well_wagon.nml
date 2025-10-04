@@ -303,12 +303,12 @@ switch (FEAT_TRAINS, SELF, sw_wellwagon_cargo_capacity, cargo_type_in_veh) {
 }
 
 switch (FEAT_TRAINS, SELF, sw_wellwagon_articulated_part, extra_callback_info1) {
-    1..2: return item_rail_wellwagon;
+    1..2: return item_rail_wellwagon_r;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
 switch (FEAT_TRAINS, SELF, sw_wellwagon_cc_articulated_part, extra_callback_info1) {
-    1..2: return item_rail_wellwagon_cc;
+    1..2: return item_rail_wellwagon;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
@@ -377,19 +377,20 @@ item(FEAT_TRAINS, item_rail_wellwagon) {
 
     graphics {
         cargo_capacity:                 sw_wellwagon_cargo_capacity;
-        colour_mapping:                 palette_2cc(sw_wellwagon_random_param_13(), sw_wellwagon_random_param_24());
-        random_trigger:                 palette_2cc(sw_wellwagon_random_param_13(), sw_wellwagon_random_param_24());
-        articulated_part:               sw_wellwagon_articulated_part;
+        colour_mapping:                 palette_2cc(sw_wellwagon_cc_random_colour_1(), sw_wellwagon_cc_random_colour_2());
+        random_trigger:                 palette_2cc(sw_wellwagon_cc_random_colour_1(), sw_wellwagon_cc_random_colour_2());
+        articulated_part:               sw_wellwagon_cc_articulated_part;
         default:                        sw_wellwagon_setgroup_pos;
         purchase:                       set_wellwagon_purchase;
         cost_factor:                    sw_purchase_cost_factor;
         running_cost_factor:            sw_running_cost_factor;
     }
+
 }
 
-item(FEAT_TRAINS, item_rail_wellwagon_cc, item_rail_wellwagon + 1) {
+item(FEAT_TRAINS, item_rail_wellwagon_r, item_rail_wellwagon + 1) {
     property {
-        name:                           string(STR_WELLWAGON_NAME_CC);
+        name:                           string(STR_WELLWAGON_NAME_R);
         climates_available:             ALL_CLIMATES;
         introduction_date:              date(1990, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
@@ -416,9 +417,9 @@ item(FEAT_TRAINS, item_rail_wellwagon_cc, item_rail_wellwagon + 1) {
 
     graphics {
         cargo_capacity:                 sw_wellwagon_cargo_capacity;
-        colour_mapping:                 palette_2cc(sw_wellwagon_cc_random_colour_1(), sw_wellwagon_cc_random_colour_2());
-        random_trigger:                 palette_2cc(sw_wellwagon_cc_random_colour_1(), sw_wellwagon_cc_random_colour_2());
-        articulated_part:               sw_wellwagon_cc_articulated_part;
+        colour_mapping:                 palette_2cc(sw_wellwagon_random_param_13(), sw_wellwagon_random_param_24());
+        random_trigger:                 palette_2cc(sw_wellwagon_random_param_13(), sw_wellwagon_random_param_24());
+        articulated_part:               sw_wellwagon_articulated_part;
         default:                        sw_wellwagon_setgroup_pos;
         purchase:                       set_wellwagon_purchase;
         cost_factor:                    sw_purchase_cost_factor;
