@@ -13,24 +13,29 @@ for Oil is 80
 <img src="example.png"> \
 *example train with well wagons*
 
+<img src="example_cc.png"> \
+*containers with company colours*
+
 #### Parameters
 
 - **More realistic containers colours**: **This option requires: OpenTTD >= v14.0 / JGRPP > v0.66.0** Randomizer will favor blue, red and white containers
 - **Running / Purchase cost factor**: Free - 1/16 - 1 - x16 
+- **Raisins**: Random additional colours close to cc
 
 #### Requires
 
-Minimum OpenTTD 1.4.0
-**Recommended OpenTTD >= 14.0 or JGRPP > 0.66.0**
-
-#### TODO
-
-- Static Company Colours
-- ISO Tank sprites
-- 5 Section Well Wagon
-- Flat wagon to single container
+**Recommended OpenTTD >= 14.0 or JGRPP >= 0.66.1**
 
 #### CHANGELOG
+
+#### 1.2
+- add: containers can have company colours
+- add: raisins parameters
+- change: id swap:
+  - default well wagon is with company colours now
+  - secondary well wagon has random colours
+- change: some pixels in gfx
+
 #### 1.1
 - add: params:
   - Realistic Containers Colours
